@@ -1,0 +1,993 @@
+/* =============================================================
+   MORIA — Trabajo Práctico Programación IV (UTN)
+   Hoja de estilos general
+============================================================= */
+
+/* -------------------------------------------------------------
+   0. VARIABLES Y RESET
+------------------------------------------------------------- */
+:root {
+  --noche: #0B0716;
+  --terciopelo: #1B0A2E;
+  --neon: #FF1F8F;
+  --neon-suave: #FF7AC4;
+  --esmeralda: #12796B;
+  --violeta: #7B2FA8;
+  --nacar: #F5E8F2;
+  --nacar-tenue: #B79DB8;
+
+  --fuente-titulos: "Bodoni Moda", "Times New Roman", serif;
+  --fuente-cuerpo: "Archivo", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --ancho-maximo: 1180px;
+  --radio: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--noche);
+  color: var(--nacar);
+  font-family: var(--fuente-cuerpo);
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Fondo decorativo de "lentejuelas": textura real tileada (img/textura-lentejuelas.png),
+   oscurecida con un degradé por encima para que el texto siga siendo legible. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--noche);
+  background-image:
+    linear-gradient(rgba(11, 7, 22, 0.8), rgba(11, 7, 22, 0.88)),
+    url("../img/textura-lentejuelas.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover, 480px 480px;
+  background-position: center, center;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3 {
+  font-family: var(--fuente-titulos);
+  font-style: italic;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 0.5em;
+  color: var(--nacar);
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--neon-suave);
+}
+
+.contenedor {
+  max-width: var(--ancho-maximo);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--neon-suave);
+  margin-bottom: 0.5em;
+}
+
+.seccion {
+  padding-block: 72px;
+}
+
+.seccion--alt {
+  background-color: rgba(27, 10, 46, 0.55);
+}
+
+.seccion__intro {
+  max-width: 640px;
+  color: var(--nacar-tenue);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* Accesibilidad: enlace de salto, oculto hasta recibir foco */
+.skip-link {
+  position: absolute;
+  left: 0;
+  top: -100px;
+  background: var(--neon);
+  color: var(--noche);
+  padding: 10px 18px;
+  z-index: 999;
+  font-weight: 700;
+  border-radius: 0 0 8px 0;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Accesibilidad: foco visible consistente en todo el sitio */
+:focus-visible {
+  outline: 3px solid var(--neon-suave);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* -------------------------------------------------------------
+   1. HEADER STICKY + NAV
+------------------------------------------------------------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11, 7, 22, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 122, 196, 0.2);
+}
+
+.header__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 16px;
+}
+
+.logo {
+  font-family: var(--fuente-titulos);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: var(--nacar);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.nav__lista {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cada ítem de nav es un desplegable: .nav__item ancla la posición del
+   submenú, que se abre con :hover o :focus-within (sin JS en desktop). */
+.nav__item {
+  position: relative;
+}
+
+.nav__link {
+  color: var(--nacar);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav__link:hover {
+  color: var(--neon-suave);
+}
+
+/* Botón ▾: oculto en desktop (el hover ya abre el submenú), visible en
+   mobile porque ahí no existe hover (ver media query 520px). */
+.nav__caret {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--nacar);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.nav__submenu {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  min-width: 230px;
+  background: var(--terciopelo);
+  border: 1px solid rgba(255, 122, 196, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 200;
+}
+
+.nav__item:hover > .nav__submenu,
+.nav__item:focus-within > .nav__submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav__submenu a,
+.nav__sublink {
+  display: block;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--nacar-tenue);
+  text-decoration: none;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.nav__submenu a:hover {
+  background: rgba(255, 31, 143, 0.12);
+  color: var(--nacar);
+}
+
+.nav__sublink {
+  cursor: default;
+  color: var(--neon-suave);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+/* Submenú de segundo nivel (Episodios → Temporada 1 → capítulos):
+   se despliega como flyout hacia la derecha del primer nivel. */
+.nav__submenu--nivel2 {
+  top: -10px;
+  left: calc(100% + 6px);
+  min-width: 260px;
+}
+
+.nav__submenu--nivel2 a {
+  white-space: normal;
+}
+
+/* Botón hamburguesa: oculto en desktop, visible en mobile (ver media queries) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-toggle__linea {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--nacar);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__linea:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__linea:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__linea:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* -------------------------------------------------------------
+   2. HERO
+------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background-image: url("../img/textura-lentejuelas.png");
+  background-repeat: repeat;
+  background-size: 480px 480px;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 7, 22, 0.35) 0%,
+    rgba(11, 7, 22, 0.75) 65%,
+    rgba(11, 7, 22, 0.95) 100%
+  );
+}
+
+.hero__contenido {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 64px;
+}
+
+.hero__titulo {
+  font-size: clamp(4rem, 16vw, 11rem);
+  margin: 0;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--neon);
+  text-stroke: 2px var(--neon);
+  text-shadow:
+    0 0 12px rgba(255, 31, 143, 0.55),
+    0 0 32px rgba(255, 31, 143, 0.45),
+    0 0 64px rgba(123, 47, 168, 0.4);
+  letter-spacing: 0.03em;
+}
+
+.hero__bajada {
+  color: var(--nacar-tenue);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.5em;
+}
+
+.pills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.pill {
+  border: 1px solid var(--neon-suave);
+  color: var(--nacar);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(255, 31, 143, 0.08);
+}
+
+.pill--netflix {
+  background: var(--esmeralda);
+  border-color: var(--esmeralda);
+  color: var(--nacar);
+}
+
+/* -------------------------------------------------------------
+   3. SINOPSIS
+------------------------------------------------------------- */
+.sinopsis__imagen img {
+  border-radius: var(--radio);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Grilla "Explorá el sitio" (solo en index.html): accesos a cada página */
+.grid-explorar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.card-explorar {
+  display: block;
+  background: var(--terciopelo);
+  border-radius: var(--radio);
+  padding: 24px;
+  text-decoration: none;
+  border: 1px solid rgba(255, 122, 196, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-explorar:hover {
+  transform: translateY(-4px);
+  border-color: var(--neon-suave);
+  box-shadow: 0 16px 32px rgba(255, 31, 143, 0.18);
+}
+
+.card-explorar h3 {
+  color: var(--neon-suave);
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.card-explorar p {
+  color: var(--nacar-tenue);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------
+   4. ELENCO — "TRES MORIAS"
+------------------------------------------------------------- */
+.grid-elenco {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.card-actriz {
+  background: var(--terciopelo);
+  border-radius: var(--radio);
+  overflow: hidden;
+  border: 1px solid rgba(255, 122, 196, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-actriz:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(255, 31, 143, 0.2);
+}
+
+.card-actriz img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.card-actriz__info {
+  padding: 20px;
+}
+
+.card-actriz__etapa {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--neon-suave);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.card-actriz__info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.card-actriz__info p {
+  color: var(--nacar-tenue);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------
+   5. EPISODIOS
+------------------------------------------------------------- */
+.lista-episodios {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.episodio {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 24px;
+  align-items: start;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 122, 196, 0.15);
+}
+
+.episodio__numero {
+  font-family: var(--fuente-titulos);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--violeta);
+  line-height: 1;
+}
+
+.episodio__info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.episodio__info p {
+  color: var(--nacar-tenue);
+  margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------
+   6. FRASES — "EL IDIOMA DE LA ONE"
+------------------------------------------------------------- */
+.grid-frases {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.card-frase {
+  background: var(--terciopelo);
+  border-radius: var(--radio);
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid rgba(255, 122, 196, 0.15);
+}
+
+/* Miniatura clicable: se reemplaza por un <iframe> real al tocar play
+   (ver js/main.js, sección 6). */
+.card-frase__video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--noche);
+}
+
+.card-frase__video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-frase__video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.card-frase__play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid var(--neon);
+  background: rgba(11, 7, 22, 0.6);
+  color: var(--nacar);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.card-frase__play:hover {
+  background: var(--neon);
+  color: var(--noche);
+  transform: scale(1.05);
+}
+
+.card-frase__texto {
+  font-family: var(--fuente-titulos);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 1.15rem;
+  margin: 16px 20px 20px;
+}
+
+.video-embed {
+  margin-top: 48px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--terciopelo);
+  border-radius: var(--radio);
+  border: 1px dashed rgba(255, 122, 196, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-embed__alt {
+  text-align: center;
+  color: var(--nacar-tenue);
+  font-size: 0.85rem;
+  margin: 12px 0 0;
+}
+
+/* -------------------------------------------------------------
+   7. QUIZ — "¿QUÉ MORIA SOS?"
+------------------------------------------------------------- */
+.quiz {
+  margin-top: 40px;
+  background: var(--terciopelo);
+  border-radius: var(--radio);
+  padding: 32px;
+  border: 1px solid rgba(255, 122, 196, 0.15);
+}
+
+.quiz__pregunta h3 {
+  font-family: var(--fuente-cuerpo);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--nacar);
+  margin-bottom: 20px;
+}
+
+.quiz__progreso {
+  color: var(--nacar-tenue);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.quiz__opciones {
+  display: grid;
+  gap: 12px;
+}
+
+.quiz__opcion {
+  text-align: left;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 122, 196, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--nacar);
+  cursor: pointer;
+  font-family: var(--fuente-cuerpo);
+  font-size: 1rem;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.quiz__opcion:hover {
+  background: rgba(255, 31, 143, 0.15);
+  border-color: var(--neon);
+}
+
+.quiz__resultado {
+  text-align: center;
+}
+
+.quiz__resultado-imagen {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  border: 3px solid var(--neon);
+  box-shadow: 0 0 24px rgba(255, 31, 143, 0.45);
+}
+
+.quiz__resultado h3 {
+  font-size: 2rem;
+  color: var(--neon-suave);
+}
+
+.quiz__resultado-frase {
+  font-family: var(--fuente-titulos);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--nacar);
+  margin: 20px 0;
+}
+
+.btn-reiniciar {
+  background: var(--neon);
+  color: var(--noche);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-reiniciar:hover {
+  background: var(--neon-suave);
+}
+
+/* -------------------------------------------------------------
+   8. CONTACTO
+------------------------------------------------------------- */
+.lista-contacto {
+  margin: 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lista-contacto dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--neon-suave);
+  font-weight: 700;
+}
+
+.lista-contacto dd {
+  margin: 4px 0 0;
+  color: var(--nacar);
+}
+
+.contacto__mapa iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: var(--radio);
+}
+
+/* -------------------------------------------------------------
+   9. FICHA TÉCNICA
+------------------------------------------------------------- */
+.ficha-tecnica {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 48px;
+}
+
+.ficha-tecnica dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--neon-suave);
+  font-weight: 700;
+}
+
+.ficha-tecnica dd {
+  margin: 4px 0 0;
+  color: var(--nacar);
+  font-size: 1.05rem;
+}
+
+/* -------------------------------------------------------------
+   10. FOOTER
+------------------------------------------------------------- */
+.footer {
+  padding-block: 32px;
+  border-top: 1px solid rgba(255, 122, 196, 0.15);
+  background: rgba(11, 7, 22, 0.6);
+}
+
+.footer p {
+  color: var(--nacar-tenue);
+  font-size: 0.85rem;
+  margin: 0;
+  text-align: center;
+}
+
+.footer__redes {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 20px;
+  padding: 0;
+}
+
+.footer__red {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--neon-suave);
+  color: var(--nacar);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.footer__red-icono {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.footer__red:hover {
+  background: var(--neon);
+  border-color: var(--neon);
+  color: var(--noche);
+}
+
+.footer__red--netflix {
+  background: var(--esmeralda);
+  border-color: var(--esmeralda);
+}
+
+.footer__red--netflix:hover {
+  background: var(--neon);
+  border-color: var(--neon);
+}
+
+/* -------------------------------------------------------------
+   11. ACCESIBILIDAD — MOVIMIENTO REDUCIDO
+------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -------------------------------------------------------------
+   12. MEDIA QUERIES
+------------------------------------------------------------- */
+@media (max-width: 860px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-elenco {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-explorar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-frases {
+    grid-template-columns: 1fr;
+  }
+
+  .seccion {
+    padding-block: 56px;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav {
+    position: fixed;
+    top: 73px;
+    left: 0;
+    right: 0;
+    background: var(--terciopelo);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid rgba(255, 122, 196, 0.2);
+  }
+
+  .nav--abierta {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .nav__lista {
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 24px 20px;
+  }
+
+  .nav__item {
+    border-bottom: 1px solid rgba(255, 122, 196, 0.1);
+  }
+
+  .nav__link {
+    display: block;
+    padding: 14px 0;
+  }
+
+  /* Sin hover en mobile: el ▾ abre/cierra el submenú con JS (js/main.js, sección 1) */
+  .nav__caret {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 44px;
+    height: 44px;
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .nav__caret[aria-expanded="true"] {
+    transform: rotate(180deg);
+  }
+
+  .nav__submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0 0 0 16px;
+    margin: 0;
+    min-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav__submenu--abierto {
+    max-height: 900px;
+  }
+
+  .nav__submenu a,
+  .nav__sublink {
+    padding: 10px 0;
+    white-space: normal;
+  }
+
+  .nav__item--nivel2 {
+    position: relative;
+    padding-right: 44px;
+    border-bottom: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .grid-elenco {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-explorar {
+    grid-template-columns: 1fr;
+  }
+
+  .episodio {
+    grid-template-columns: 60px 1fr;
+    gap: 16px;
+  }
+
+  .episodio__numero {
+    font-size: 2rem;
+  }
+
+  .ficha-tecnica {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    align-items: center;
+    min-height: 100vh;
+  }
+}

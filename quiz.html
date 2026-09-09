@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz | MORIA</title>
+  <meta name="description" content="¿Qué Moria sos? Quiz de personalidad de la serie Moria (Netflix, 2026). Trabajo Práctico de Programación IV - UTN.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:ital,wght@1,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+
+  <!-- Header idéntico al de index.html (ver comentario ahí) -->
+  <header class="header" id="header">
+    <div class="header__barra contenedor">
+      <a href="index.html" class="logo">MORIA</a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="nav-principal"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="menu-toggle__linea"></span>
+        <span class="menu-toggle__linea"></span>
+        <span class="menu-toggle__linea"></span>
+      </button>
+
+      <nav class="nav" id="nav-principal" aria-label="Navegación principal">
+        <ul class="nav__lista">
+          <li class="nav__item">
+            <a href="serie.html" class="nav__link">La serie</a>
+            <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de La serie">▾</button>
+            <ul class="nav__submenu">
+              <li><a href="serie.html#serie">Sinopsis</a></li>
+              <li><a href="serie.html#ficha-tecnica">Ficha técnica</a></li>
+            </ul>
+          </li>
+
+          <li class="nav__item">
+            <a href="elenco.html" class="nav__link">Elenco</a>
+            <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Elenco">▾</button>
+            <ul class="nav__submenu">
+              <li><a href="elenco.html#elenco-sofia">Sofía Gala Castiglione</a></li>
+              <li><a href="elenco.html#elenco-griselda">Griselda Siciliani</a></li>
+              <li><a href="elenco.html#elenco-cecilia">Cecilia Roth</a></li>
+            </ul>
+          </li>
+
+          <li class="nav__item">
+            <a href="episodios.html" class="nav__link">Episodios</a>
+            <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Episodios">▾</button>
+            <ul class="nav__submenu">
+              <li class="nav__item nav__item--nivel2">
+                <span class="nav__sublink">Temporada 1</span>
+                <button type="button" class="nav__caret nav__caret--nivel2" aria-expanded="false" aria-label="Mostrar capítulos de Temporada 1">▾</button>
+                <ul class="nav__submenu nav__submenu--nivel2">
+                  <li><a href="episodios.html#cap-01">Cap. 1 — La One nace en Constitución</a></li>
+                  <li><a href="episodios.html#cap-02">Cap. 2 — De vedette a tapa de revista</a></li>
+                  <li><a href="episodios.html#cap-03">Cap. 3 — El salto a la tele</a></li>
+                  <li><a href="episodios.html#cap-04">Cap. 4 — Escándalos y titulares</a></li>
+                  <li><a href="episodios.html#cap-05">Cap. 5 — El nacimiento de La One</a></li>
+                  <li><a href="episodios.html#cap-06">Cap. 6 — El aplauso y el bombardeo</a></li>
+                  <li><a href="episodios.html#cap-07">Cap. 7 — La One contra el mundo</a></li>
+                  <li><a href="episodios.html#cap-08">Cap. 8 — El mito que se queda</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav__item">
+            <a href="frases.html" class="nav__link">Frases</a>
+            <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Frases">▾</button>
+            <ul class="nav__submenu">
+              <li><a href="frases.html#frase-abuela">"No metas a tu abuela muerta"</a></li>
+              <li><a href="frases.html#frase-quienes-son">"¿Quiénes son?"</a></li>
+              <li><a href="frases.html#frase-decorado">"El decorado se calla"</a></li>
+              <li><a href="frases.html#frase-jamon">"No era jamón, era jalapaleta"</a></li>
+            </ul>
+          </li>
+
+          <li class="nav__item">
+            <a href="quiz.html" class="nav__link">Quiz</a>
+            <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Quiz">▾</button>
+            <ul class="nav__submenu">
+              <li><a href="quiz.html">Moria Llorando</a></li>
+              <li><a href="quiz.html">Moria Puteando</a></li>
+              <li><a href="quiz.html">Moria Bebotera</a></li>
+              <li><a href="quiz.html">Moria Diva</a></li>
+            </ul>
+          </li>
+
+          <li class="nav__item">
+            <a href="contacto.html" class="nav__link">Contacto</a>
+            <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Contacto">▾</button>
+            <ul class="nav__submenu">
+              <li><a href="contacto.html#contacto">Datos de contacto</a></li>
+              <li><a href="contacto.html#mapa-contacto">Cómo llegar</a></li>
+              <li><a href="serie.html#ficha-tecnica">Ficha técnica</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+
+    <!-- ===========================================================
+         QUIZ — "¿QUÉ MORIA SOS?"
+    ============================================================ -->
+    <section class="seccion" id="quiz">
+      <div class="contenedor">
+        <p class="eyebrow">Quiz</p>
+        <h1>¿Qué Moria sos?</h1>
+        <p class="seccion__intro">
+          Cinco preguntas para saber de una vez por todas cuál de las tres
+          Morias llevás adentro.
+        </p>
+
+        <div id="quiz-contenedor" class="quiz" aria-live="polite">
+          <!-- El JS (js/main.js, sección 7) inyecta acá las preguntas y el resultado -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor">
+      <ul class="footer__redes" aria-label="Plataforma y redes sociales">
+        <li>
+          <a href="https://www.netflix.com/ar/title/81958141" target="_blank" rel="noopener noreferrer" class="footer__red footer__red--netflix">
+            <svg class="footer__red-icono" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M5 3h3.8l6.4 12V3H19v18h-3.7L8.9 9v12H5V3z"/></svg>
+            Netflix
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/moria_laone/" target="_blank" rel="noopener noreferrer" class="footer__red">
+            <svg class="footer__red-icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/Moria_Casan" target="_blank" rel="noopener noreferrer" class="footer__red">
+            <svg class="footer__red-icono" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X
+          </a>
+        </li>
+      </ul>
+
+      <p>
+        Este sitio es un <strong>Trabajo Práctico académico</strong> para la
+        materia Programación IV (UTN). No es un sitio oficial de Netflix ni
+        está afiliado a Moria Casán ni a las productoras mencionadas.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
