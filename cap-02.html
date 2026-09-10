@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto | MORIA</title>
-  <meta name="description" content="Datos de contacto y formulario de la serie Moria (Netflix, 2026). Trabajo Práctico de Programación IV - UTN.">
+  <title>Cap. 2 — De vedette a tapa de revista | MORIA</title>
+  <meta name="description" content="Episodio 2 de Moria (Netflix, 2026): De vedette a tapa de revista. Trabajo Práctico de Programación IV - UTN.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,6 @@
 
   <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 
-  <!-- Header idéntico al de index.html (ver comentario ahí) -->
   <header class="header" id="header">
     <div class="header__barra contenedor">
       <a href="index.html" class="logo">MORIA</a>
@@ -88,78 +87,34 @@
   </header>
 
   <main id="contenido-principal">
-
-    <!-- ===========================================================
-         CONTACTO
-    ============================================================ -->
-    <section class="seccion" id="contacto">
-      <div class="contenedor grid-2">
-        <div class="contacto__datos">
-          <p class="eyebrow">Contacto</p>
-          <h1>¿Dónde encontrarnos?</h1>
-          <dl class="lista-contacto">
-            <div>
-              <dt>Sede</dt>
-              <dd>Teatro Maipo</dd>
-            </div>
-            <div>
-              <dt>Dirección</dt>
-              <dd>Esmeralda 443, CABA, Argentina</dd>
-            </div>
-            <div>
-              <dt>Email</dt>
-              <dd><a href="mailto:contacto@moria-serie-tp.com">contacto@moria-serie-tp.com</a></dd>
-            </div>
-            <div>
-              <dt>Teléfono</dt>
-              <dd><a href="tel:+541143221234">+54 11 4322-1234</a></dd>
-            </div>
-          </dl>
-        </div>
-
-        <div class="contacto__mapa" id="mapa-contacto">
-          <iframe
-            src="https://www.google.com/maps?q=Teatro+Maipo,+Esmeralda+443,+CABA,+Argentina&output=embed"
-            title="Mapa de ubicación del Teatro Maipo, Esmeralda 443, CABA"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===========================================================
-         FORMULARIO DE CONTACTO
-         Sitio estático sin backend: el envío se simula con JS
-         (ver js/main.js, sección 8) y no manda un mail real.
-    ============================================================ -->
-    <section class="seccion seccion--alt">
+    <section class="seccion">
       <div class="contenedor">
-        <p class="eyebrow">Escribinos</p>
-        <h2>Dejanos tu mensaje</h2>
+        <p class="eyebrow">Episodio 02</p>
 
-        <form class="formulario-contacto" id="form-contacto">
-          <div>
-            <label for="form-nombre">Nombre</label>
-            <input type="text" id="form-nombre" name="nombre" required autocomplete="name">
+        <div class="detalle">
+          <div class="detalle__imagen">
+            <img src="img/sofia-gala.jpg" alt="Still del capítulo 2, con Sofía Gala Castiglione" loading="lazy">
           </div>
 
           <div>
-            <label for="form-email">Email</label>
-            <input type="email" id="form-email" name="email" required autocomplete="email">
+            <h1>De vedette a tapa de revista</h1>
+            <p>
+              El primer contrato importante y la primera tapa: el país
+              empieza a aprenderse un nombre nuevo. Ana María todavía no es
+              Moria, pero ya empieza a probarse el personaje que la va a
+              hacer famosa.
+            </p>
+            <p>
+              Este episodio marca el quiebre entre la vida privada y la vida
+              pública: la primera vez que unos desconocidos reconocen su
+              cara en la calle.
+            </p>
+            <span class="card-episodio__elenco">Protagonizado por Sofía Gala Castiglione</span>
+            <p><a class="detalle__volver" href="episodios.html">← Volver a Episodios</a></p>
           </div>
-
-          <div>
-            <label for="form-mensaje">Mensaje</label>
-            <textarea id="form-mensaje" name="mensaje" required></textarea>
-          </div>
-
-          <button type="submit" class="btn-reiniciar">Enviar</button>
-          <p class="formulario-contacto__mensaje" id="form-contacto-mensaje" aria-live="polite"></p>
-        </form>
+        </div>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">

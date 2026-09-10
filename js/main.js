@@ -5,11 +5,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   inicializarMenu();
-  inicializarElenco();
   inicializarFrases();
   inicializarQuiz();
   inicializarContacto();
-  inicializarGaleria();
 });
 
 /* -------------------------------------------------------------
@@ -38,8 +36,7 @@ function inicializarMenu() {
     if (abierto) cerrarSubmenus();
   });
 
-  // En mobile no hay hover: el botón ▾ abre/cierra su submenú (funciona
-  // igual para el 1er nivel y para el flyout de "Temporada 1").
+  // En mobile no hay hover: el botón ▾ abre/cierra su submenú.
   nav.querySelectorAll('.nav__caret').forEach((caret) => {
     caret.addEventListener('click', () => {
       const submenu = caret.nextElementSibling;
@@ -57,26 +54,6 @@ function inicializarMenu() {
       boton.setAttribute('aria-label', 'Abrir menú de navegación');
       nav.classList.remove('nav--abierta');
       cerrarSubmenus();
-    });
-  });
-}
-
-/* -------------------------------------------------------------
-   4. ELENCO — botón "Ver más" por actriz (solo en elenco.html)
-------------------------------------------------------------- */
-function inicializarElenco() {
-  const botones = document.querySelectorAll('.card-actriz__mas');
-  if (!botones.length) return;
-
-  botones.forEach((boton) => {
-    boton.addEventListener('click', () => {
-      const extra = document.getElementById(boton.getAttribute('aria-controls'));
-      if (!extra) return;
-
-      const abierto = boton.getAttribute('aria-expanded') === 'true';
-      boton.setAttribute('aria-expanded', String(!abierto));
-      boton.textContent = abierto ? 'Ver más' : 'Ver menos';
-      extra.classList.toggle('card-actriz__extra--abierto', !abierto);
     });
   });
 }
@@ -365,39 +342,3 @@ function inicializarContacto() {
   });
 }
 
-/* -------------------------------------------------------------
-   9. GALERÍA — lightbox (solo en galeria.html)
-------------------------------------------------------------- */
-function inicializarGaleria() {
-  const lightbox = document.getElementById('lightbox');
-  const items = document.querySelectorAll('.galeria__item');
-  if (!lightbox || !items.length) return;
-
-  const imagenGrande = document.getElementById('lightbox-img');
-  const botonCerrar = lightbox.querySelector('.lightbox__cerrar');
-
-  function abrir(item) {
-    imagenGrande.src = item.dataset.full;
-    imagenGrande.alt = item.querySelector('img').alt;
-    lightbox.hidden = false;
-  }
-
-  function cerrar() {
-    lightbox.hidden = true;
-    imagenGrande.src = '';
-  }
-
-  items.forEach((item) => {
-    item.addEventListener('click', () => abrir(item));
-  });
-
-  if (botonCerrar) botonCerrar.addEventListener('click', cerrar);
-
-  lightbox.addEventListener('click', (evento) => {
-    if (evento.target === lightbox) cerrar();
-  });
-
-  document.addEventListener('keydown', (evento) => {
-    if (evento.key === 'Escape' && !lightbox.hidden) cerrar();
-  });
-}

@@ -6,10 +6,11 @@
   <title>MORIA | Serie Netflix 2026</title>
   <meta name="description" content="Sitio no oficial sobre la serie biográfica Moria (Netflix, 2026), Trabajo Práctico de Programación IV - UTN.">
 
-  <!-- Tipografías de Google Fonts: Bodoni Moda para títulos, Archivo para el cuerpo -->
+  <!-- Tipografías de Google Fonts: Bodoni Moda (títulos), Archivo (cuerpo)
+       y Rubik Wet Paint (la frase tipo grafiti del Hero) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:ital,wght@1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:ital,wght@1,900&family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -46,9 +47,9 @@
             <a href="elenco.html" class="nav__link">Elenco</a>
             <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Elenco">▾</button>
             <ul class="nav__submenu">
-              <li><a href="elenco.html#elenco-sofia">Sofía Gala Castiglione</a></li>
-              <li><a href="elenco.html#elenco-griselda">Griselda Siciliani</a></li>
-              <li><a href="elenco.html#elenco-cecilia">Cecilia Roth</a></li>
+              <li><a href="elenco-sofia.html">Sofía Gala Castiglione</a></li>
+              <li><a href="elenco-griselda.html">Griselda Siciliani</a></li>
+              <li><a href="elenco-cecilia.html">Cecilia Roth</a></li>
             </ul>
           </li>
 
@@ -56,26 +57,19 @@
             <a href="episodios.html" class="nav__link">Episodios</a>
             <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Episodios">▾</button>
             <ul class="nav__submenu">
-              <li><a href="episodios.html#cap-01">Cap. 1 — La One nace en Constitución</a></li>
-              <li><a href="episodios.html#cap-02">Cap. 2 — De vedette a tapa de revista</a></li>
-              <li><a href="episodios.html#cap-03">Cap. 3 — El salto a la tele</a></li>
-              <li><a href="episodios.html#cap-04">Cap. 4 — Escándalos y titulares</a></li>
-              <li><a href="episodios.html#cap-05">Cap. 5 — El nacimiento de La One</a></li>
-              <li><a href="episodios.html#cap-06">Cap. 6 — El aplauso y el bombardeo</a></li>
-              <li><a href="episodios.html#cap-07">Cap. 7 — La One contra el mundo</a></li>
-              <li><a href="episodios.html#cap-08">Cap. 8 — El mito que se queda</a></li>
+              <li><a href="cap-01.html">Cap. 1 — La One nace en Constitución</a></li>
+              <li><a href="cap-02.html">Cap. 2 — De vedette a tapa de revista</a></li>
+              <li><a href="cap-03.html">Cap. 3 — El salto a la tele</a></li>
+              <li><a href="cap-04.html">Cap. 4 — Escándalos y titulares</a></li>
+              <li><a href="cap-05.html">Cap. 5 — El nacimiento de La One</a></li>
+              <li><a href="cap-06.html">Cap. 6 — El aplauso y el bombardeo</a></li>
+              <li><a href="cap-07.html">Cap. 7 — La One contra el mundo</a></li>
+              <li><a href="cap-08.html">Cap. 8 — El mito que se queda</a></li>
             </ul>
           </li>
 
           <li class="nav__item">
             <a href="frases.html" class="nav__link">Frases</a>
-            <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Frases">▾</button>
-            <ul class="nav__submenu">
-              <li><a href="frases.html#frase-abuela">"No metas a tu abuela muerta"</a></li>
-              <li><a href="frases.html#frase-quienes-son">"¿Quiénes son?"</a></li>
-              <li><a href="frases.html#frase-decorado">"El decorado se calla"</a></li>
-              <li><a href="frases.html#frase-jamon">"No era jamón, era jalapaleta"</a></li>
-            </ul>
           </li>
 
           <li class="nav__item">
@@ -84,13 +78,6 @@
 
           <li class="nav__item">
             <a href="quiz.html" class="nav__link">Quiz</a>
-            <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Quiz">▾</button>
-            <ul class="nav__submenu">
-              <li><a href="quiz.html">Moria Llorando</a></li>
-              <li><a href="quiz.html">Moria Puteando</a></li>
-              <li><a href="quiz.html">Moria Bebotera</a></li>
-              <li><a href="quiz.html">Moria Diva</a></li>
-            </ul>
           </li>
 
           <li class="nav__item">
@@ -99,7 +86,7 @@
             <ul class="nav__submenu">
               <li><a href="contacto.html#contacto">Datos de contacto</a></li>
               <li><a href="contacto.html#mapa-contacto">Cómo llegar</a></li>
-              <li><a href="contacto.html#ficha-tecnica">Ficha técnica</a></li>
+              <li><a href="index.html#ficha-tecnica">Ficha técnica</a></li>
             </ul>
           </li>
         </ul>
@@ -118,14 +105,14 @@
 
       <div class="hero__contenido contenedor">
         <h1 class="hero__titulo">MORIA</h1>
-        <p class="hero__bajada">La One. El mito. La serie.</p>
+        <p class="hero__frase">"Si quieren fama, ya saben de dónde colgarse."</p>
 
         <ul class="pills" aria-label="Datos rápidos de la serie">
           <li class="pill">2026</li>
           <li class="pill">1 temporada</li>
           <li class="pill">8 episodios</li>
           <li class="pill">Drama biográfico</li>
-          <li class="pill pill--netflix">Solo en Netflix</li>
+          <li class="pill">Solo en Netflix</li>
         </ul>
       </div>
     </section>
@@ -161,7 +148,71 @@
     </section>
 
     <!-- ===========================================================
-         4. EXPLORÁ EL SITIO — accesos a cada página
+         4. TRÁILER
+    ============================================================ -->
+    <section class="seccion seccion--alt">
+      <div class="contenedor">
+        <p class="eyebrow">Tráiler</p>
+        <h2>Mirá el adelanto oficial</h2>
+
+        <div class="video-embed" id="trailer">
+          <iframe
+            src="https://www.youtube.com/embed/u_nfOOsUQeY"
+            title="Tráiler oficial de Moria"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p class="video-embed__alt">
+          ¿No carga? <a href="https://www.youtube.com/watch?v=u_nfOOsUQeY" target="_blank" rel="noopener noreferrer">Mirá el tráiler directo en YouTube ↗</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         5. FICHA TÉCNICA
+    ============================================================ -->
+    <section class="seccion" id="ficha-tecnica">
+      <div class="contenedor">
+        <p class="eyebrow">Ficha técnica</p>
+        <h2>Todo lo que hay que saber</h2>
+
+        <dl class="ficha-tecnica">
+          <div>
+            <dt>Dirección</dt>
+            <dd>Javier Van De Couter</dd>
+          </div>
+          <div>
+            <dt>Producción</dt>
+            <dd>About Entertainment</dd>
+          </div>
+          <div>
+            <dt>Plataforma</dt>
+            <dd>Netflix</dd>
+          </div>
+          <div>
+            <dt>Estreno</dt>
+            <dd>14/08/2026</dd>
+          </div>
+          <div>
+            <dt>Temporadas</dt>
+            <dd>1</dd>
+          </div>
+          <div>
+            <dt>Episodios</dt>
+            <dd>8</dd>
+          </div>
+          <div>
+            <dt>País</dt>
+            <dd>Argentina</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         6. EXPLORÁ EL SITIO — accesos a cada página
     ============================================================ -->
     <section class="seccion seccion--alt">
       <div class="contenedor">
@@ -183,7 +234,7 @@
           </a>
           <a class="card-explorar" href="galeria.html">
             <h3>Galería</h3>
-            <p>Looks, actrices y momentos de la serie.</p>
+            <p>Los personajes secundarios de la serie.</p>
           </a>
           <a class="card-explorar" href="quiz.html">
             <h3>Quiz</h3>
@@ -191,7 +242,7 @@
           </a>
           <a class="card-explorar" href="contacto.html">
             <h3>Contacto</h3>
-            <p>Teatro Maipo, mapa y ficha técnica.</p>
+            <p>Teatro Maipo, mapa y formulario.</p>
           </a>
         </div>
       </div>
@@ -200,7 +251,7 @@
   </main>
 
   <!-- ===========================================================
-       5. FOOTER
+       7. FOOTER
   ============================================================ -->
   <footer class="footer">
     <div class="contenedor">

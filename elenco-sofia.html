@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto | MORIA</title>
-  <meta name="description" content="Datos de contacto y formulario de la serie Moria (Netflix, 2026). Trabajo Práctico de Programación IV - UTN.">
+  <title>Sofía Gala Castiglione | MORIA</title>
+  <meta name="description" content="Sofía Gala Castiglione interpreta a la Moria joven en la serie Moria (Netflix, 2026). Trabajo Práctico de Programación IV - UTN.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,78 +88,41 @@
   </header>
 
   <main id="contenido-principal">
-
-    <!-- ===========================================================
-         CONTACTO
-    ============================================================ -->
-    <section class="seccion" id="contacto">
-      <div class="contenedor grid-2">
-        <div class="contacto__datos">
-          <p class="eyebrow">Contacto</p>
-          <h1>¿Dónde encontrarnos?</h1>
-          <dl class="lista-contacto">
-            <div>
-              <dt>Sede</dt>
-              <dd>Teatro Maipo</dd>
-            </div>
-            <div>
-              <dt>Dirección</dt>
-              <dd>Esmeralda 443, CABA, Argentina</dd>
-            </div>
-            <div>
-              <dt>Email</dt>
-              <dd><a href="mailto:contacto@moria-serie-tp.com">contacto@moria-serie-tp.com</a></dd>
-            </div>
-            <div>
-              <dt>Teléfono</dt>
-              <dd><a href="tel:+541143221234">+54 11 4322-1234</a></dd>
-            </div>
-          </dl>
-        </div>
-
-        <div class="contacto__mapa" id="mapa-contacto">
-          <iframe
-            src="https://www.google.com/maps?q=Teatro+Maipo,+Esmeralda+443,+CABA,+Argentina&output=embed"
-            title="Mapa de ubicación del Teatro Maipo, Esmeralda 443, CABA"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===========================================================
-         FORMULARIO DE CONTACTO
-         Sitio estático sin backend: el envío se simula con JS
-         (ver js/main.js, sección 8) y no manda un mail real.
-    ============================================================ -->
-    <section class="seccion seccion--alt">
+    <section class="seccion">
       <div class="contenedor">
-        <p class="eyebrow">Escribinos</p>
-        <h2>Dejanos tu mensaje</h2>
+        <p class="eyebrow">Elenco — Moria joven</p>
 
-        <form class="formulario-contacto" id="form-contacto">
-          <div>
-            <label for="form-nombre">Nombre</label>
-            <input type="text" id="form-nombre" name="nombre" required autocomplete="name">
+        <div class="detalle">
+          <div class="detalle__imagen">
+            <img src="img/sofia-gala.jpg" alt="Sofía Gala Castiglione caracterizada como la Moria joven, con maquillaje neón y peluca oscura" loading="lazy">
           </div>
 
           <div>
-            <label for="form-email">Email</label>
-            <input type="email" id="form-email" name="email" required autocomplete="email">
+            <h1>Sofía Gala Castiglione</h1>
+            <p>
+              La Moria que todavía no sabe que va a ser Moria: bailarina de
+              revista, hambrienta de escenario y de revancha. Sofía Gala
+              Castiglione se pone en la piel de esos primeros años, cuando
+              Ana María Casanova todavía busca su nombre artístico y su lugar
+              arriba de un escenario.
+            </p>
+            <p>
+              Para este papel, la actriz trabajó la transformación física y
+              gestual de una mujer que recién empieza a construir su propio
+              personaje público: la postura, el modo de pararse frente a una
+              cámara, la primera vez que una frase suya queda instalada. Es
+              la Moria más frágil de las tres versiones, la que todavía
+              puede sorprenderse.
+            </p>
+            <p>
+              Aparece principalmente en los primeros episodios de la
+              temporada, antes de que el nombre "La One" siquiera exista.
+            </p>
+            <a class="detalle__volver" href="elenco.html">← Volver al elenco</a>
           </div>
-
-          <div>
-            <label for="form-mensaje">Mensaje</label>
-            <textarea id="form-mensaje" name="mensaje" required></textarea>
-          </div>
-
-          <button type="submit" class="btn-reiniciar">Enviar</button>
-          <p class="formulario-contacto__mensaje" id="form-contacto-mensaje" aria-live="polite"></p>
-        </form>
+        </div>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">

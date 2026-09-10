@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto | MORIA</title>
-  <meta name="description" content="Datos de contacto y formulario de la serie Moria (Netflix, 2026). Trabajo Práctico de Programación IV - UTN.">
+  <title>Cap. 7 — La One contra el mundo | MORIA</title>
+  <meta name="description" content="Episodio 7 de Moria (Netflix, 2026): La One contra el mundo. Trabajo Práctico de Programación IV - UTN.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,6 @@
 
   <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
 
-  <!-- Header idéntico al de index.html (ver comentario ahí) -->
   <header class="header" id="header">
     <div class="header__barra contenedor">
       <a href="index.html" class="logo">MORIA</a>
@@ -88,78 +87,33 @@
   </header>
 
   <main id="contenido-principal">
-
-    <!-- ===========================================================
-         CONTACTO
-    ============================================================ -->
-    <section class="seccion" id="contacto">
-      <div class="contenedor grid-2">
-        <div class="contacto__datos">
-          <p class="eyebrow">Contacto</p>
-          <h1>¿Dónde encontrarnos?</h1>
-          <dl class="lista-contacto">
-            <div>
-              <dt>Sede</dt>
-              <dd>Teatro Maipo</dd>
-            </div>
-            <div>
-              <dt>Dirección</dt>
-              <dd>Esmeralda 443, CABA, Argentina</dd>
-            </div>
-            <div>
-              <dt>Email</dt>
-              <dd><a href="mailto:contacto@moria-serie-tp.com">contacto@moria-serie-tp.com</a></dd>
-            </div>
-            <div>
-              <dt>Teléfono</dt>
-              <dd><a href="tel:+541143221234">+54 11 4322-1234</a></dd>
-            </div>
-          </dl>
-        </div>
-
-        <div class="contacto__mapa" id="mapa-contacto">
-          <iframe
-            src="https://www.google.com/maps?q=Teatro+Maipo,+Esmeralda+443,+CABA,+Argentina&output=embed"
-            title="Mapa de ubicación del Teatro Maipo, Esmeralda 443, CABA"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===========================================================
-         FORMULARIO DE CONTACTO
-         Sitio estático sin backend: el envío se simula con JS
-         (ver js/main.js, sección 8) y no manda un mail real.
-    ============================================================ -->
-    <section class="seccion seccion--alt">
+    <section class="seccion">
       <div class="contenedor">
-        <p class="eyebrow">Escribinos</p>
-        <h2>Dejanos tu mensaje</h2>
+        <p class="eyebrow">Episodio 07</p>
 
-        <form class="formulario-contacto" id="form-contacto">
-          <div>
-            <label for="form-nombre">Nombre</label>
-            <input type="text" id="form-nombre" name="nombre" required autocomplete="name">
+        <div class="detalle">
+          <div class="detalle__imagen">
+            <img src="img/cecilia-roth.jpg" alt="Still del capítulo 7, con Cecilia Roth" loading="lazy">
           </div>
 
           <div>
-            <label for="form-email">Email</label>
-            <input type="email" id="form-email" name="email" required autocomplete="email">
+            <h1>La One contra el mundo</h1>
+            <p>
+              La crítica la subestima, los colegas la envidian y la prensa
+              no la suelta. Moria responde subiéndose a un escenario
+              teatral para demostrar, de una vez, que el personaje también
+              sabe actuar.
+            </p>
+            <p>
+              Un episodio sobre la revancha: la que fue mirada por arriba
+              durante años se planta frente a los que la subestimaron.
+            </p>
+            <span class="card-episodio__elenco">Protagonizado por Cecilia Roth</span>
+            <p><a class="detalle__volver" href="episodios.html">← Volver a Episodios</a></p>
           </div>
-
-          <div>
-            <label for="form-mensaje">Mensaje</label>
-            <textarea id="form-mensaje" name="mensaje" required></textarea>
-          </div>
-
-          <button type="submit" class="btn-reiniciar">Enviar</button>
-          <p class="formulario-contacto__mensaje" id="form-contacto-mensaje" aria-live="polite"></p>
-        </form>
+        </div>
       </div>
     </section>
-
   </main>
 
   <footer class="footer">
