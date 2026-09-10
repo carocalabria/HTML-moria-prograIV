@@ -37,15 +37,6 @@
       <nav class="nav" id="nav-principal" aria-label="Navegación principal">
         <ul class="nav__lista">
           <li class="nav__item">
-            <a href="serie.html" class="nav__link">La serie</a>
-            <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de La serie">▾</button>
-            <ul class="nav__submenu">
-              <li><a href="serie.html#serie">Sinopsis</a></li>
-              <li><a href="serie.html#ficha-tecnica">Ficha técnica</a></li>
-            </ul>
-          </li>
-
-          <li class="nav__item">
             <a href="elenco.html" class="nav__link">Elenco</a>
             <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Elenco">▾</button>
             <ul class="nav__submenu">
@@ -59,20 +50,14 @@
             <a href="episodios.html" class="nav__link">Episodios</a>
             <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Episodios">▾</button>
             <ul class="nav__submenu">
-              <li class="nav__item nav__item--nivel2">
-                <span class="nav__sublink">Temporada 1</span>
-                <button type="button" class="nav__caret nav__caret--nivel2" aria-expanded="false" aria-label="Mostrar capítulos de Temporada 1">▾</button>
-                <ul class="nav__submenu nav__submenu--nivel2">
-                  <li><a href="episodios.html#cap-01">Cap. 1 — La One nace en Constitución</a></li>
-                  <li><a href="episodios.html#cap-02">Cap. 2 — De vedette a tapa de revista</a></li>
-                  <li><a href="episodios.html#cap-03">Cap. 3 — El salto a la tele</a></li>
-                  <li><a href="episodios.html#cap-04">Cap. 4 — Escándalos y titulares</a></li>
-                  <li><a href="episodios.html#cap-05">Cap. 5 — El nacimiento de La One</a></li>
-                  <li><a href="episodios.html#cap-06">Cap. 6 — El aplauso y el bombardeo</a></li>
-                  <li><a href="episodios.html#cap-07">Cap. 7 — La One contra el mundo</a></li>
-                  <li><a href="episodios.html#cap-08">Cap. 8 — El mito que se queda</a></li>
-                </ul>
-              </li>
+              <li><a href="episodios.html#cap-01">Cap. 1 — La One nace en Constitución</a></li>
+              <li><a href="episodios.html#cap-02">Cap. 2 — De vedette a tapa de revista</a></li>
+              <li><a href="episodios.html#cap-03">Cap. 3 — El salto a la tele</a></li>
+              <li><a href="episodios.html#cap-04">Cap. 4 — Escándalos y titulares</a></li>
+              <li><a href="episodios.html#cap-05">Cap. 5 — El nacimiento de La One</a></li>
+              <li><a href="episodios.html#cap-06">Cap. 6 — El aplauso y el bombardeo</a></li>
+              <li><a href="episodios.html#cap-07">Cap. 7 — La One contra el mundo</a></li>
+              <li><a href="episodios.html#cap-08">Cap. 8 — El mito que se queda</a></li>
             </ul>
           </li>
 
@@ -85,6 +70,10 @@
               <li><a href="frases.html#frase-decorado">"El decorado se calla"</a></li>
               <li><a href="frases.html#frase-jamon">"No era jamón, era jalapaleta"</a></li>
             </ul>
+          </li>
+
+          <li class="nav__item">
+            <a href="galeria.html" class="nav__link">Galería</a>
           </li>
 
           <li class="nav__item">
@@ -104,7 +93,7 @@
             <ul class="nav__submenu">
               <li><a href="contacto.html#contacto">Datos de contacto</a></li>
               <li><a href="contacto.html#mapa-contacto">Cómo llegar</a></li>
-              <li><a href="serie.html#ficha-tecnica">Ficha técnica</a></li>
+              <li><a href="contacto.html#ficha-tecnica">Ficha técnica</a></li>
             </ul>
           </li>
         </ul>
@@ -133,7 +122,24 @@
               <span class="card-actriz__etapa">Moria joven</span>
               <h2>Sofía Gala Castiglione</h2>
               <p>La Moria que todavía no sabe que va a ser Moria: bailarina de
-                revista, hambrienta de escenario y de revancha.</p>
+                revista, hambrienta de escenario y de revancha. Sofía Gala
+                Castiglione se pone en la piel de esos primeros años, cuando
+                Ana María Casanova todavía busca su nombre artístico y su lugar
+                arriba de un escenario.</p>
+              <button
+                type="button"
+                class="card-actriz__mas"
+                aria-expanded="false"
+                aria-controls="elenco-sofia-extra"
+              >Ver más</button>
+              <p class="card-actriz__extra" id="elenco-sofia-extra">
+                Para este papel, la actriz trabajó la transformación física y
+                gestual de una mujer que recién empieza a construir su propio
+                personaje público: la postura, el modo de pararse frente a una
+                cámara, la primera vez que una frase suya queda instalada. Es
+                la Moria más frágil de las tres versiones, la que todavía
+                puede sorprenderse.
+              </p>
             </div>
           </article>
 
@@ -143,7 +149,22 @@
               <span class="card-actriz__etapa">Moria en su consagración</span>
               <h2>Griselda Siciliani</h2>
               <p>La Moria de los estudios de TV, la que inventa un estilo de
-                hablar y de escandalizar que todavía se cita en cada asado.</p>
+                hablar y de escandalizar que todavía se cita en cada asado.
+                Griselda Siciliani encarna el momento bisagra: la vedette que
+                se convierte en un fenómeno de la pantalla chica.</p>
+              <button
+                type="button"
+                class="card-actriz__mas"
+                aria-expanded="false"
+                aria-controls="elenco-griselda-extra"
+              >Ver más</button>
+              <p class="card-actriz__extra" id="elenco-griselda-extra">
+                Esta es la etapa donde nace "el idioma de La One": las frases
+                improvisadas que se vuelven virales antes de que existiera esa
+                palabra. Siciliani tuvo que equilibrar el costado cómico con
+                el drama de una mujer que empieza a perder el control de su
+                propia imagen pública.
+              </p>
             </div>
           </article>
 
@@ -153,7 +174,22 @@
               <span class="card-actriz__etapa">Moria en su madurez</span>
               <h2>Cecilia Roth</h2>
               <p>La Moria diva y filósofa, la que ya se ganó el derecho a
-                callar al decorado con una sola mirada.</p>
+                callar al decorado con una sola mirada. Cecilia Roth cierra la
+                trilogía con la Moria consagrada, la que ya es un mito y lo
+                sabe.</p>
+              <button
+                type="button"
+                class="card-actriz__mas"
+                aria-expanded="false"
+                aria-controls="elenco-cecilia-extra"
+              >Ver más</button>
+              <p class="card-actriz__extra" id="elenco-cecilia-extra">
+                Roth aborda a una Moria que ya hizo las paces con su propio
+                personaje: mira hacia atrás sin nostalgia, contesta con una
+                frase filosófica lo que antes hubiera respondido a los gritos.
+                Es la versión más serena y, a la vez, la más filosa de las
+                tres.
+              </p>
             </div>
           </article>
         </div>
@@ -166,21 +202,21 @@
     <div class="contenedor">
       <ul class="footer__redes" aria-label="Plataforma y redes sociales">
         <li>
-          <a href="https://www.netflix.com/ar/title/81958141" target="_blank" rel="noopener noreferrer" class="footer__red footer__red--netflix">
+          <a href="https://www.netflix.com/ar/title/81958141" target="_blank" rel="noopener noreferrer" class="footer__red">
             <svg class="footer__red-icono" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M5 3h3.8l6.4 12V3H19v18h-3.7L8.9 9v12H5V3z"/></svg>
-            Netflix
+            <span class="footer__red-texto">Netflix</span>
           </a>
         </li>
         <li>
           <a href="https://www.instagram.com/moria_laone/" target="_blank" rel="noopener noreferrer" class="footer__red">
             <svg class="footer__red-icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            Instagram
+            <span class="footer__red-texto">Instagram</span>
           </a>
         </li>
         <li>
           <a href="https://x.com/Moria_Casan" target="_blank" rel="noopener noreferrer" class="footer__red">
             <svg class="footer__red-icono" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            X
+            <span class="footer__red-texto">X</span>
           </a>
         </li>
       </ul>

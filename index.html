@@ -20,10 +20,8 @@
 
   <!-- ===========================================================
        1. HEADER STICKY + NAV
-       Sitio multipágina: cada ítem del menú lleva a su propia página
-       (serie.html, elenco.html, episodios.html, frases.html, quiz.html,
-       contacto.html). Este mismo bloque de header se repite igual en
-       todas las páginas del sitio.
+       Sitio multipágina: cada ítem del menú lleva a su propia página.
+       Este mismo bloque de header se repite igual en todas las páginas.
   ============================================================ -->
   <header class="header" id="header">
     <div class="header__barra contenedor">
@@ -45,15 +43,6 @@
       <nav class="nav" id="nav-principal" aria-label="Navegación principal">
         <ul class="nav__lista">
           <li class="nav__item">
-            <a href="serie.html" class="nav__link">La serie</a>
-            <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de La serie">▾</button>
-            <ul class="nav__submenu">
-              <li><a href="serie.html#serie">Sinopsis</a></li>
-              <li><a href="serie.html#ficha-tecnica">Ficha técnica</a></li>
-            </ul>
-          </li>
-
-          <li class="nav__item">
             <a href="elenco.html" class="nav__link">Elenco</a>
             <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Elenco">▾</button>
             <ul class="nav__submenu">
@@ -67,20 +56,14 @@
             <a href="episodios.html" class="nav__link">Episodios</a>
             <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Episodios">▾</button>
             <ul class="nav__submenu">
-              <li class="nav__item nav__item--nivel2">
-                <span class="nav__sublink">Temporada 1</span>
-                <button type="button" class="nav__caret nav__caret--nivel2" aria-expanded="false" aria-label="Mostrar capítulos de Temporada 1">▾</button>
-                <ul class="nav__submenu nav__submenu--nivel2">
-                  <li><a href="episodios.html#cap-01">Cap. 1 — La One nace en Constitución</a></li>
-                  <li><a href="episodios.html#cap-02">Cap. 2 — De vedette a tapa de revista</a></li>
-                  <li><a href="episodios.html#cap-03">Cap. 3 — El salto a la tele</a></li>
-                  <li><a href="episodios.html#cap-04">Cap. 4 — Escándalos y titulares</a></li>
-                  <li><a href="episodios.html#cap-05">Cap. 5 — El nacimiento de La One</a></li>
-                  <li><a href="episodios.html#cap-06">Cap. 6 — El aplauso y el bombardeo</a></li>
-                  <li><a href="episodios.html#cap-07">Cap. 7 — La One contra el mundo</a></li>
-                  <li><a href="episodios.html#cap-08">Cap. 8 — El mito que se queda</a></li>
-                </ul>
-              </li>
+              <li><a href="episodios.html#cap-01">Cap. 1 — La One nace en Constitución</a></li>
+              <li><a href="episodios.html#cap-02">Cap. 2 — De vedette a tapa de revista</a></li>
+              <li><a href="episodios.html#cap-03">Cap. 3 — El salto a la tele</a></li>
+              <li><a href="episodios.html#cap-04">Cap. 4 — Escándalos y titulares</a></li>
+              <li><a href="episodios.html#cap-05">Cap. 5 — El nacimiento de La One</a></li>
+              <li><a href="episodios.html#cap-06">Cap. 6 — El aplauso y el bombardeo</a></li>
+              <li><a href="episodios.html#cap-07">Cap. 7 — La One contra el mundo</a></li>
+              <li><a href="episodios.html#cap-08">Cap. 8 — El mito que se queda</a></li>
             </ul>
           </li>
 
@@ -93,6 +76,10 @@
               <li><a href="frases.html#frase-decorado">"El decorado se calla"</a></li>
               <li><a href="frases.html#frase-jamon">"No era jamón, era jalapaleta"</a></li>
             </ul>
+          </li>
+
+          <li class="nav__item">
+            <a href="galeria.html" class="nav__link">Galería</a>
           </li>
 
           <li class="nav__item">
@@ -112,7 +99,7 @@
             <ul class="nav__submenu">
               <li><a href="contacto.html#contacto">Datos de contacto</a></li>
               <li><a href="contacto.html#mapa-contacto">Cómo llegar</a></li>
-              <li><a href="serie.html#ficha-tecnica">Ficha técnica</a></li>
+              <li><a href="contacto.html#ficha-tecnica">Ficha técnica</a></li>
             </ul>
           </li>
         </ul>
@@ -144,22 +131,44 @@
     </section>
 
     <!-- ===========================================================
-         3. EXPLORÁ EL SITIO — accesos a cada página
+         3. SINOPSIS
     ============================================================ -->
-    <section class="seccion">
+    <section class="seccion" id="serie">
+      <div class="contenedor grid-2">
+        <div class="sinopsis__texto">
+          <p class="eyebrow">La serie</p>
+          <h2>De Ana María Casanova a Moria Casán</h2>
+          <p>
+            Constitución, mediados del siglo XX. Ana María Casanova es una chica
+            de barrio con una lengua filosa y un hambre de mundo que no le entra
+            en la casa de sus padres. <strong>Moria</strong> reconstruye, temporada
+            por episodio, la transformación de esa chica en la mujer que la
+            Argentina terminaría llamando simplemente <em>La One</em>.
+          </p>
+          <p>
+            De corista de revista porteña a musa de la televisión en blanco y
+            negro, de escándalo de tapa a filósofa de living, la serie sigue
+            el ascenso de una figura que se inventó a sí misma frase por frase,
+            hasta convertirse en un mito popular imposible de imitar y
+            aún más imposible de ignorar.
+          </p>
+        </div>
+
+        <div class="sinopsis__imagen">
+          <img src="img/portada.png" alt="Afiche de la serie Moria, ambientado en un camarín de teatro con espejos de luces" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         4. EXPLORÁ EL SITIO — accesos a cada página
+    ============================================================ -->
+    <section class="seccion seccion--alt">
       <div class="contenedor">
         <p class="eyebrow">Explorá</p>
         <h2>Recorré el sitio</h2>
-        <p class="seccion__intro">
-          Esto no es todo en una sola pantalla: cada sección vive en su
-          propia página. Elegí por dónde arrancar.
-        </p>
 
         <div class="grid-explorar">
-          <a class="card-explorar" href="serie.html">
-            <h3>La serie</h3>
-            <p>De Ana María Casanova a Moria Casán: sinopsis y ficha técnica.</p>
-          </a>
           <a class="card-explorar" href="elenco.html">
             <h3>Elenco</h3>
             <p>Tres actrices, una sola Moria.</p>
@@ -172,13 +181,17 @@
             <h3>Frases</h3>
             <p>El idioma de La One, con clips de su voz real.</p>
           </a>
+          <a class="card-explorar" href="galeria.html">
+            <h3>Galería</h3>
+            <p>Looks, actrices y momentos de la serie.</p>
+          </a>
           <a class="card-explorar" href="quiz.html">
             <h3>Quiz</h3>
             <p>¿Qué Moria sos? Hacé el test.</p>
           </a>
           <a class="card-explorar" href="contacto.html">
             <h3>Contacto</h3>
-            <p>Teatro Maipo, mapa y datos de contacto.</p>
+            <p>Teatro Maipo, mapa y ficha técnica.</p>
           </a>
         </div>
       </div>
@@ -187,28 +200,28 @@
   </main>
 
   <!-- ===========================================================
-       4. FOOTER
+       5. FOOTER
   ============================================================ -->
   <footer class="footer">
     <div class="contenedor">
       <!-- Iconos dibujados a mano en SVG (sin librerías externas) -->
       <ul class="footer__redes" aria-label="Plataforma y redes sociales">
         <li>
-          <a href="https://www.netflix.com/ar/title/81958141" target="_blank" rel="noopener noreferrer" class="footer__red footer__red--netflix">
+          <a href="https://www.netflix.com/ar/title/81958141" target="_blank" rel="noopener noreferrer" class="footer__red">
             <svg class="footer__red-icono" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M5 3h3.8l6.4 12V3H19v18h-3.7L8.9 9v12H5V3z"/></svg>
-            Netflix
+            <span class="footer__red-texto">Netflix</span>
           </a>
         </li>
         <li>
           <a href="https://www.instagram.com/moria_laone/" target="_blank" rel="noopener noreferrer" class="footer__red">
             <svg class="footer__red-icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            Instagram
+            <span class="footer__red-texto">Instagram</span>
           </a>
         </li>
         <li>
           <a href="https://x.com/Moria_Casan" target="_blank" rel="noopener noreferrer" class="footer__red">
             <svg class="footer__red-icono" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            X
+            <span class="footer__red-texto">X</span>
           </a>
         </li>
       </ul>

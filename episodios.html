@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Episodios | MORIA</title>
-  <meta name="description" content="Detalle de los 8 episodios de la Temporada 1 de Moria (Netflix, 2026). Trabajo Práctico de Programación IV - UTN.">
+  <meta name="description" content="Detalle de los 8 episodios de Moria (Netflix, 2026). Trabajo Práctico de Programación IV - UTN.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,15 +37,6 @@
       <nav class="nav" id="nav-principal" aria-label="Navegación principal">
         <ul class="nav__lista">
           <li class="nav__item">
-            <a href="serie.html" class="nav__link">La serie</a>
-            <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de La serie">▾</button>
-            <ul class="nav__submenu">
-              <li><a href="serie.html#serie">Sinopsis</a></li>
-              <li><a href="serie.html#ficha-tecnica">Ficha técnica</a></li>
-            </ul>
-          </li>
-
-          <li class="nav__item">
             <a href="elenco.html" class="nav__link">Elenco</a>
             <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Elenco">▾</button>
             <ul class="nav__submenu">
@@ -59,20 +50,14 @@
             <a href="episodios.html" class="nav__link">Episodios</a>
             <button type="button" class="nav__caret" aria-expanded="false" aria-label="Mostrar submenú de Episodios">▾</button>
             <ul class="nav__submenu">
-              <li class="nav__item nav__item--nivel2">
-                <span class="nav__sublink">Temporada 1</span>
-                <button type="button" class="nav__caret nav__caret--nivel2" aria-expanded="false" aria-label="Mostrar capítulos de Temporada 1">▾</button>
-                <ul class="nav__submenu nav__submenu--nivel2">
-                  <li><a href="episodios.html#cap-01">Cap. 1 — La One nace en Constitución</a></li>
-                  <li><a href="episodios.html#cap-02">Cap. 2 — De vedette a tapa de revista</a></li>
-                  <li><a href="episodios.html#cap-03">Cap. 3 — El salto a la tele</a></li>
-                  <li><a href="episodios.html#cap-04">Cap. 4 — Escándalos y titulares</a></li>
-                  <li><a href="episodios.html#cap-05">Cap. 5 — El nacimiento de La One</a></li>
-                  <li><a href="episodios.html#cap-06">Cap. 6 — El aplauso y el bombardeo</a></li>
-                  <li><a href="episodios.html#cap-07">Cap. 7 — La One contra el mundo</a></li>
-                  <li><a href="episodios.html#cap-08">Cap. 8 — El mito que se queda</a></li>
-                </ul>
-              </li>
+              <li><a href="episodios.html#cap-01">Cap. 1 — La One nace en Constitución</a></li>
+              <li><a href="episodios.html#cap-02">Cap. 2 — De vedette a tapa de revista</a></li>
+              <li><a href="episodios.html#cap-03">Cap. 3 — El salto a la tele</a></li>
+              <li><a href="episodios.html#cap-04">Cap. 4 — Escándalos y titulares</a></li>
+              <li><a href="episodios.html#cap-05">Cap. 5 — El nacimiento de La One</a></li>
+              <li><a href="episodios.html#cap-06">Cap. 6 — El aplauso y el bombardeo</a></li>
+              <li><a href="episodios.html#cap-07">Cap. 7 — La One contra el mundo</a></li>
+              <li><a href="episodios.html#cap-08">Cap. 8 — El mito que se queda</a></li>
             </ul>
           </li>
 
@@ -85,6 +70,10 @@
               <li><a href="frases.html#frase-decorado">"El decorado se calla"</a></li>
               <li><a href="frases.html#frase-jamon">"No era jamón, era jalapaleta"</a></li>
             </ul>
+          </li>
+
+          <li class="nav__item">
+            <a href="galeria.html" class="nav__link">Galería</a>
           </li>
 
           <li class="nav__item">
@@ -104,7 +93,7 @@
             <ul class="nav__submenu">
               <li><a href="contacto.html#contacto">Datos de contacto</a></li>
               <li><a href="contacto.html#mapa-contacto">Cómo llegar</a></li>
-              <li><a href="serie.html#ficha-tecnica">Ficha técnica</a></li>
+              <li><a href="contacto.html#ficha-tecnica">Ficha técnica</a></li>
             </ul>
           </li>
         </ul>
@@ -113,114 +102,100 @@
   </header>
 
   <main id="contenido-principal">
+
+    <!-- ===========================================================
+         EPISODIOS
+    ============================================================ -->
     <section class="seccion">
       <div class="contenedor">
-        <p class="eyebrow">Temporada 1</p>
+        <p class="eyebrow">Episodios</p>
         <h1>Los 8 episodios de Moria</h1>
-        <p class="seccion__intro">
-          Detalle completo de cada capítulo. <a href="index.html">Volver a la página principal ↩</a>
-        </p>
 
-        <ol class="lista-episodios">
-          <li class="episodio" id="cap-01">
-            <span class="episodio__numero">01</span>
-            <div class="episodio__info">
-              <h2>La One nace en Constitución</h2>
-              <p>Ana María Casanova crece entre pensiones y ensayos de revista.
-                Una audición cambia el rumbo de una vida entera.</p>
-            </div>
+        <ol class="grid-episodios">
+          <li class="card-episodio" id="cap-01">
+            <span class="card-episodio__numero">01</span>
+            <h2>La One nace en Constitución</h2>
+            <p>Ana María Casanova crece entre pensiones y ensayos de revista.
+              Una audición cambia el rumbo de una vida entera.</p>
           </li>
 
-          <li class="episodio" id="cap-02">
-            <span class="episodio__numero">02</span>
-            <div class="episodio__info">
-              <h2>De vedette a tapa de revista</h2>
-              <p>El primer contrato importante y la primera tapa: el país
-                empieza a aprenderse un nombre nuevo.</p>
-            </div>
+          <li class="card-episodio" id="cap-02">
+            <span class="card-episodio__numero">02</span>
+            <h2>De vedette a tapa de revista</h2>
+            <p>El primer contrato importante y la primera tapa: el país
+              empieza a aprenderse un nombre nuevo.</p>
           </li>
 
-          <li class="episodio" id="cap-03">
-            <span class="episodio__numero">03</span>
-            <div class="episodio__info">
-              <h2>El salto a la tele</h2>
-              <p>Un estudio, una cámara y una frase improvisada que se
-                convierte, sin que nadie lo planee, en un estilo.</p>
-            </div>
+          <li class="card-episodio" id="cap-03">
+            <span class="card-episodio__numero">03</span>
+            <h2>El salto a la tele</h2>
+            <p>Un estudio, una cámara y una frase improvisada que se
+              convierte, sin que nadie lo planee, en un estilo.</p>
           </li>
 
-          <li class="episodio" id="cap-04">
-            <span class="episodio__numero">04</span>
-            <div class="episodio__info">
-              <h2>Escándalos y titulares</h2>
-              <p>Los flashes ya no se apagan. Moria aprende a usar el
-                escándalo como quien aprende un idioma nuevo.</p>
-            </div>
+          <li class="card-episodio" id="cap-04">
+            <span class="card-episodio__numero">04</span>
+            <h2>Escándalos y titulares</h2>
+            <p>Los flashes ya no se apagan. Moria aprende a usar el
+              escándalo como quien aprende un idioma nuevo.</p>
           </li>
 
-          <li class="episodio" id="cap-05">
-            <span class="episodio__numero">05</span>
-            <div class="episodio__info">
-              <h2>El nacimiento de La One</h2>
-              <p>Una frase dicha al pasar la instala para siempre como
-                "La One". Ya no hay vuelta atrás.</p>
-            </div>
+          <li class="card-episodio" id="cap-05">
+            <span class="card-episodio__numero">05</span>
+            <h2>El nacimiento de La One</h2>
+            <p>Una frase dicha al pasar la instala para siempre como
+              "La One". Ya no hay vuelta atrás.</p>
           </li>
 
-          <li class="episodio" id="cap-06">
-            <span class="episodio__numero">06</span>
-            <div class="episodio__info">
-              <h2>El aplauso y el bombardeo</h2>
-              <p>La fama trae contratos, pero también un noviazgo mediático que
-                explota en todas las tapas. Moria descubre que el escándalo
-                vende tanto como el talento, y decide dejar de pedir disculpas.</p>
-            </div>
+          <li class="card-episodio" id="cap-06">
+            <span class="card-episodio__numero">06</span>
+            <h2>El aplauso y el bombardeo</h2>
+            <p>La fama trae contratos, pero también un noviazgo mediático que
+              explota en todas las tapas. Moria descubre que el escándalo
+              vende tanto como el talento, y decide dejar de pedir disculpas.</p>
           </li>
 
-          <li class="episodio" id="cap-07">
-            <span class="episodio__numero">07</span>
-            <div class="episodio__info">
-              <h2>La One contra el mundo</h2>
-              <p>La crítica la subestima, los colegas la envidian y la prensa
-                no la suelta. Moria responde subiéndose a un escenario teatral
-                para demostrar, de una vez, que el personaje también sabe actuar.</p>
-            </div>
+          <li class="card-episodio" id="cap-07">
+            <span class="card-episodio__numero">07</span>
+            <h2>La One contra el mundo</h2>
+            <p>La crítica la subestima, los colegas la envidian y la prensa
+              no la suelta. Moria responde subiéndose a un escenario teatral
+              para demostrar, de una vez, que el personaje también sabe actuar.</p>
           </li>
 
-          <li class="episodio" id="cap-08">
-            <span class="episodio__numero">08</span>
-            <div class="episodio__info">
-              <h2>El mito que se queda</h2>
-              <p>Años después, una Moria consagrada mira hacia atrás: la chica
-                de Constitución, la vedette, la diva de tapa. El cierre de
-                temporada confirma lo que ya se sabía, que La One no se retira,
-                se convierte en leyenda.</p>
-            </div>
+          <li class="card-episodio" id="cap-08">
+            <span class="card-episodio__numero">08</span>
+            <h2>El mito que se queda</h2>
+            <p>Años después, una Moria consagrada mira hacia atrás: la chica
+              de Constitución, la vedette, la diva de tapa. El cierre de
+              temporada confirma lo que ya se sabía, que La One no se retira,
+              se convierte en leyenda.</p>
           </li>
         </ol>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
     <div class="contenedor">
       <ul class="footer__redes" aria-label="Plataforma y redes sociales">
         <li>
-          <a href="https://www.netflix.com/ar/title/81958141" target="_blank" rel="noopener noreferrer" class="footer__red footer__red--netflix">
+          <a href="https://www.netflix.com/ar/title/81958141" target="_blank" rel="noopener noreferrer" class="footer__red">
             <svg class="footer__red-icono" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M5 3h3.8l6.4 12V3H19v18h-3.7L8.9 9v12H5V3z"/></svg>
-            Netflix
+            <span class="footer__red-texto">Netflix</span>
           </a>
         </li>
         <li>
           <a href="https://www.instagram.com/moria_laone/" target="_blank" rel="noopener noreferrer" class="footer__red">
             <svg class="footer__red-icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            Instagram
+            <span class="footer__red-texto">Instagram</span>
           </a>
         </li>
         <li>
           <a href="https://x.com/Moria_Casan" target="_blank" rel="noopener noreferrer" class="footer__red">
             <svg class="footer__red-icono" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            X
+            <span class="footer__red-texto">X</span>
           </a>
         </li>
       </ul>
