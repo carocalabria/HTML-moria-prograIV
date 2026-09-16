@@ -353,12 +353,14 @@ function inicializarGaleria() {
 
   const personajes = Array.from(botones).map((boton) => ({
     nombre: boton.dataset.nombre,
+    actor: boton.dataset.actor,
     rol: boton.dataset.rol,
     img: boton.dataset.img,
   }));
 
   const imagenGrande = document.getElementById('lightbox-img');
   const nombreGrande = document.getElementById('lightbox-nombre');
+  const actorGrande = document.getElementById('lightbox-actor');
   const rolGrande = document.getElementById('lightbox-rol');
   const botonCerrar = lightbox.querySelector('.lightbox__cerrar');
   const botonPrev = lightbox.querySelector('.lightbox__flecha--prev');
@@ -374,6 +376,7 @@ function inicializarGaleria() {
     imagenGrande.src = personaje.img;
     imagenGrande.alt = personaje.nombre;
     nombreGrande.textContent = personaje.nombre;
+    if (actorGrande) actorGrande.textContent = personaje.actor || '';
     rolGrande.textContent = personaje.rol;
   }
 
