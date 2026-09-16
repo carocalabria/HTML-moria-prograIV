@@ -503,60 +503,66 @@ a {
 /* -------------------------------------------------------------
    5. EPISODIOS
 ------------------------------------------------------------- */
-.grid-episodios {
+.lista-episodios {
   list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   margin: 40px 0 0;
   padding: 0;
 }
 
-.card-episodio {
-  display: block;
+.fila-episodio {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   background: var(--terciopelo);
   border-radius: var(--radio);
-  overflow: hidden;
+  padding: 12px;
   border: 1px solid rgba(255, 122, 196, 0.15);
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.card-episodio:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(255, 31, 143, 0.18);
+.fila-episodio:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(255, 31, 143, 0.16);
 }
 
-.card-episodio__imagen {
-  width: 100%;
+/* Miniatura chica a propósito: las fotos son de resolución modesta y
+   estiradas más anchas se ven pixeladas. */
+.fila-episodio__imagen {
+  flex: 0 0 180px;
+  width: 180px;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  border-radius: 10px;
 }
 
-.card-episodio__info {
-  padding: 20px;
+.fila-episodio__info {
+  min-width: 0;
 }
 
-.card-episodio__numero {
+.fila-episodio__numero {
   display: block;
   font-family: var(--fuente-titulos);
   font-style: italic;
   font-weight: 900;
-  font-size: 2.2rem;
+  font-size: 1.6rem;
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--violeta);
+  -webkit-text-stroke: 1.2px var(--violeta);
   line-height: 1;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
-.card-episodio__info h2 {
-  font-size: 1.15rem;
-  margin-bottom: 8px;
+.fila-episodio__info h2 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
 }
 
-.card-episodio__info p {
+.fila-episodio__info p {
   color: var(--nacar-tenue);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   margin-bottom: 0;
 }
 
@@ -1107,10 +1113,6 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .grid-episodios {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .grid-personajes {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1216,8 +1218,13 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .grid-episodios {
-    grid-template-columns: 1fr;
+  .fila-episodio {
+    gap: 12px;
+  }
+
+  .fila-episodio__imagen {
+    flex-basis: 110px;
+    width: 110px;
   }
 
   .grid-personajes {
