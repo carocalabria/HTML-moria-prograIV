@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   inicializarFrases();
   inicializarQuiz();
   inicializarContacto();
+  inicializarGaleria();
 });
 
 /* -------------------------------------------------------------
@@ -339,6 +340,69 @@ function inicializarContacto() {
     }
 
     formulario.reset();
+  });
+}
+
+/* -------------------------------------------------------------
+   9. GALERÍA — lightbox con navegación entre personajes
+------------------------------------------------------------- */
+function inicializarGaleria() {
+  const lightbox = document.getElementById('lightbox');
+  const botones = document.querySelectorAll('.card-personaje__boton');
+  if (!lightbox || !botones.length) return;
+
+  const personajes = Array.from(botones).map((boton) => ({
+    nombre: boton.dataset.nombre,
+    rol: boton.dataset.rol,
+    img: boton.dataset.img,
+  }));
+
+  const imagenGrande = document.getElementById('lightbox-img');
+  const nombreGrande = document.getElementById('lightbox-nombre');
+  const rolGrande = document.getElementById('lightbox-rol');
+  const botonCerrar = lightbox.querySelector('.lightbox__cerrar');
+  const botonPrev = lightbox.querySelector('.lightbox__flecha--prev');
+  const botonNext = lightbox.querySelector('.lightbox__flecha--next');
+
+  let indiceActual = 0;
+
+  function mostrar(indice) {
+    // Módulo "positivo" para que dé la vuelta en los dos sentidos.
+    indiceActual = (indice + personajes.length) % personajes.length;
+    const personaje = personajes[indiceActual];
+
+    imagenGrande.src = personaje.img;
+    imagenGrande.alt = personaje.nombre;
+    nombreGrande.textContent = personaje.nombre;
+    rolGrande.textContent = personaje.rol;
+  }
+
+  function abrir(indice) {
+    mostrar(indice);
+    lightbox.hidden = false;
+  }
+
+  function cerrar() {
+    lightbox.hidden = true;
+  }
+
+  botones.forEach((boton, indice) => {
+    boton.addEventListener('click', () => abrir(indice));
+  });
+
+  botonCerrar.addEventListener('click', cerrar);
+  botonPrev.addEventListener('click', () => mostrar(indiceActual - 1));
+  botonNext.addEventListener('click', () => mostrar(indiceActual + 1));
+
+  lightbox.addEventListener('click', (evento) => {
+    if (evento.target === lightbox) cerrar();
+  });
+
+  document.addEventListener('keydown', (evento) => {
+    if (lightbox.hidden) return;
+    if (evento.key === 'Escape') cerrar();
+    if (evento.key === 'ArrowLeft') mostrar(indiceActual - 1);
+    if (evento.key === 'ArrowRight') mostrar(indiceActual + 1);
   });
 }
 

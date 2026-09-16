@@ -79,7 +79,6 @@
             <ul class="nav__submenu">
               <li><a href="contacto.html#contacto">Datos de contacto</a></li>
               <li><a href="contacto.html#mapa-contacto">Cómo llegar</a></li>
-              <li><a href="index.html#ficha-tecnica">Ficha técnica</a></li>
             </ul>
           </li>
         </ul>
@@ -104,9 +103,16 @@
           rivales, familia y prensa. Estos son algunos de ellos.
         </p>
 
+        <!--
+          El botón de cada foto abre el lightbox (ver js/main.js, sección 9).
+          Adentro del lightbox se puede pasar al personaje anterior/siguiente
+          sin cerrarlo, con las flechas o con las teclas ← →.
+        -->
         <div class="grid-personajes">
           <article class="card-personaje">
-            <img src="img/personaje-pepe.svg" alt="Placeholder de Pepe Ferrari" loading="lazy">
+            <button type="button" class="card-personaje__boton" data-nombre="Pepe Ferrari" data-rol="El representante que la descubre" data-img="img/personaje-pepe.svg">
+              <img src="img/personaje-pepe.svg" alt="Placeholder de Pepe Ferrari" loading="lazy">
+            </button>
             <div class="card-personaje__info">
               <h2>Pepe Ferrari</h2>
               <p class="card-personaje__rol">El representante que la descubre</p>
@@ -114,7 +120,9 @@
           </article>
 
           <article class="card-personaje">
-            <img src="img/personaje-susana.svg" alt="Placeholder de Susana Almada" loading="lazy">
+            <button type="button" class="card-personaje__boton" data-nombre="Susana Almada" data-rol="La rival de toda la vida" data-img="img/personaje-susana.svg">
+              <img src="img/personaje-susana.svg" alt="Placeholder de Susana Almada" loading="lazy">
+            </button>
             <div class="card-personaje__info">
               <h2>Susana Almada</h2>
               <p class="card-personaje__rol">La rival de toda la vida</p>
@@ -122,7 +130,9 @@
           </article>
 
           <article class="card-personaje">
-            <img src="img/personaje-cacho.svg" alt="Placeholder de Cacho Lostra" loading="lazy">
+            <button type="button" class="card-personaje__boton" data-nombre="Cacho Lostra" data-rol="El director de teatro" data-img="img/personaje-cacho.svg">
+              <img src="img/personaje-cacho.svg" alt="Placeholder de Cacho Lostra" loading="lazy">
+            </button>
             <div class="card-personaje__info">
               <h2>Cacho Lostra</h2>
               <p class="card-personaje__rol">El director de teatro</p>
@@ -130,7 +140,9 @@
           </article>
 
           <article class="card-personaje">
-            <img src="img/personaje-delia.svg" alt="Placeholder de Delia Casanova" loading="lazy">
+            <button type="button" class="card-personaje__boton" data-nombre="Delia Casanova" data-rol="La madre de Ana María" data-img="img/personaje-delia.svg">
+              <img src="img/personaje-delia.svg" alt="Placeholder de Delia Casanova" loading="lazy">
+            </button>
             <div class="card-personaje__info">
               <h2>Delia Casanova</h2>
               <p class="card-personaje__rol">La madre de Ana María</p>
@@ -138,7 +150,9 @@
           </article>
 
           <article class="card-personaje">
-            <img src="img/personaje-tito.svg" alt="Placeholder de Tito Reyes" loading="lazy">
+            <button type="button" class="card-personaje__boton" data-nombre="Tito Reyes" data-rol="El primer productor de TV" data-img="img/personaje-tito.svg">
+              <img src="img/personaje-tito.svg" alt="Placeholder de Tito Reyes" loading="lazy">
+            </button>
             <div class="card-personaje__info">
               <h2>Tito Reyes</h2>
               <p class="card-personaje__rol">El primer productor de TV</p>
@@ -146,7 +160,9 @@
           </article>
 
           <article class="card-personaje">
-            <img src="img/personaje-vivi.svg" alt="Placeholder de Vivi Duarte" loading="lazy">
+            <button type="button" class="card-personaje__boton" data-nombre="Vivi Duarte" data-rol="La cronista que la persigue" data-img="img/personaje-vivi.svg">
+              <img src="img/personaje-vivi.svg" alt="Placeholder de Vivi Duarte" loading="lazy">
+            </button>
             <div class="card-personaje__info">
               <h2>Vivi Duarte</h2>
               <p class="card-personaje__rol">La cronista que la persigue</p>
@@ -157,6 +173,18 @@
     </section>
 
   </main>
+
+  <!-- Lightbox con navegación entre personajes (ver js/main.js, sección 9) -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button type="button" class="lightbox__cerrar" aria-label="Cerrar">✕</button>
+    <button type="button" class="lightbox__flecha lightbox__flecha--prev" aria-label="Personaje anterior">‹</button>
+    <div class="lightbox__contenido">
+      <img src="" alt="" id="lightbox-img">
+      <h2 id="lightbox-nombre"></h2>
+      <p id="lightbox-rol"></p>
+    </div>
+    <button type="button" class="lightbox__flecha lightbox__flecha--next" aria-label="Personaje siguiente">›</button>
+  </div>
 
   <footer class="footer">
     <div class="contenedor">
