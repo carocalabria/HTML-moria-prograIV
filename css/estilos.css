@@ -500,6 +500,40 @@ a {
   text-decoration: underline;
 }
 
+/* Personajes que aparecen en el episodio (páginas cap-01.html...cap-08.html) */
+.detalle__personajes {
+  margin-top: 20px;
+}
+
+.detalle__personajes h2 {
+  font-family: var(--fuente-cuerpo);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--neon-suave);
+  margin-bottom: 10px;
+}
+
+.detalle__personajes ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.detalle__personajes li {
+  background: rgba(255, 122, 196, 0.1);
+  border: 1px solid rgba(255, 122, 196, 0.3);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 0.85rem;
+  color: var(--nacar);
+}
+
 /* -------------------------------------------------------------
    5. EPISODIOS
 ------------------------------------------------------------- */
@@ -541,6 +575,7 @@ a {
 
 .fila-episodio__info {
   min-width: 0;
+  flex: 1 1 auto;
 }
 
 .fila-episodio__numero {
@@ -557,13 +592,23 @@ a {
 
 .fila-episodio__info h2 {
   font-size: 1.1rem;
-  margin-bottom: 6px;
+  margin-bottom: 0;
 }
 
-.fila-episodio__info p {
-  color: var(--nacar-tenue);
-  font-size: 0.9rem;
-  margin-bottom: 0;
+.fila-episodio__mas {
+  flex-shrink: 0;
+  border: 1px solid var(--neon-suave);
+  color: var(--neon-suave);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.fila-episodio:hover .fila-episodio__mas {
+  background: var(--neon-suave);
+  color: var(--noche);
 }
 
 /* -------------------------------------------------------------
@@ -1220,11 +1265,16 @@ a {
 
   .fila-episodio {
     gap: 12px;
+    flex-wrap: wrap;
   }
 
   .fila-episodio__imagen {
     flex-basis: 110px;
     width: 110px;
+  }
+
+  .fila-episodio__mas {
+    margin-left: 122px;
   }
 
   .grid-personajes {
